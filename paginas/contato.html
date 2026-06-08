@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Duda</title>
+    <link rel="short icon" href="../imagens/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../estilos/layout.css">
+    <link rel="stylesheet" type="text/css" href="../estilos/formulario.css">
+    <!--
+    <script>//o javascript dentro do head executa ele primeiro e dps a página//
+        //o  retorno do método prompt sempre é do tipo String//
+        let nome = prompt("Informe seu nome"); //o let é o mais usado pq ele é local//
+        let idade = Number(prompt("Informe sua idade"));//O método Number convert o valor que está como String em //
+        //console.log("Seja bem vindo, " + nome + " nas aventuras com JavaScript");//
+        /*if (idade < 18){
+            alert("Seja bem vindo, " + nome + " , mas você não tem permissão para preencher o formulário!"); //o + nome + é algo indefinido, e o q está dentro das "" é algo pré definido//
+            window.location.href="../index.html";
+        }
+        else if(idade>=18){
+        }
+        else{
+            alert("Seja bem vindo, " + nome + " , mas você não informou sua idade");
+            window.location.href="../index.html";
+        }//isso é para caso o usuario coloque caractere especial//*/
+        if(idade>=18){
+            alert("Seja bem vindo " + nome + "!");
+        }
+        else{
+            alert("Seja bem vindo, " + nome + " , mas você não tem permissão para preencher o formulário!");
+            window.location.href="../index.html";
+        }
+    </script>
+    -->
+</head>
+<body>
+    <header>
+        <figure>
+            <img class="logo" src="../imagens/fotoPerfil.png"/>
+        </figure>
+        <h1>Eduarda Mary</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Página Principal</a></li>
+            <li><a href="../paginas/sobre.html">Sobre</a></li>
+            <li><a href="../paginas/contato.html">Contatos</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form id="formulario" action="respFormulario.html" method="post">
+            <fieldset>
+                <legend>Formulário de Contato</legend>
+                <!-- o javascript é casesensitive, diferencia maiuscula e minuscula -->
+                <label for="lbNome">Nome:</label>
+                <input id="ipNome" name="Nome" type="text" required>
+
+                <label for="lbEmail">Email:</label>
+                <input id="ipEmail" name="iEmail" type="Email" required>
+
+                <label for="lbDtNascimento">Data de Nascimento</label>
+                <input id="ipDtNascimento" name="DtNascimento" type="date" required>
+
+                <label for="lbMensagem">Mensagem:</label>
+                <textarea id="taMensagem" name="taMensagem" rows="5"></textarea>
+
+                <!-- estudar type -->
+                <label for="lbMotivo">Motivo do Contato</label>
+                <select id="slMotivo" name="slMotivo">
+                    <option value="suporte">Suporte</option>
+                    <option value="vendas">Vendas</option>
+                    <option value="servicos">Serviços</option>
+                    <option value="fedback">Fedback</option>
+                    <option value="outros">Outros</option>
+                </select>
+
+                <!-- <input type="submit" value="Enviar"> -->
+                <button onclick="mostrarDadosForm(event)">Enviar</button>
+                
+            </fieldset>
+
+        </form>
+        <h2 id="resposta"></h2>
+        <br>
+        <p id="pNome"></p>
+        <p id="pEmail"></p>
+        <p id="pData"></p>
+        <p id="pMensagem"></p>
+        <p id="pMotivo"></p>
+    </main>
+        <footer>
+            <p>Desenvolvido por Eduarda Mary &copy;2026</p>
+        </footer>
+
+        <script src="../scripts/enviarDadosForm.js"></script>
+</body>
+</html>
